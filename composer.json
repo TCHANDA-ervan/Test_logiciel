@@ -1,0 +1,22 @@
+{
+    "name": "ervan/contact-service-tests-main",
+    "description": "Project",
+    "type": "project",
+    "license": "AGPL-3.0-only",
+    "autoload": {
+        "psr-4": {
+            "Ervan\\ContactServiceTestsMain\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TCHANDA-ervan",
+            "email": "94933948+TCHANDA-ervan@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "ext-pdo_sqlite": "*",
+        "ext-mbstring": "*",
+        "phpunit/phpunit": "^9.5"
+    }
+}

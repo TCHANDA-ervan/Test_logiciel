@@ -1,0 +1,5 @@
+.phpunit.cache
+report
+
+vendor
+.idea

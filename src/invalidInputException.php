@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-class invalidInputException extends Exception
+class InvalidInputException extends Exception
 {
     public function __construct($message, $code = 0, Throwable $previous = null)
     {

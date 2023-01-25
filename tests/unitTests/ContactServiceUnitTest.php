@@ -44,7 +44,7 @@ final class ContactServiceUnitTest extends TestCase
         $this->expectException(Exception::class);
         $this->expectExceptionMessage('le prenom doit être renseigné');
         $contactService = new ContactService();
-        $contactService->createContact("wenji",null);
+        $contactService->createContact("wenji", null);
     }
     
     //test Création Contact Sans Prenom
@@ -53,7 +53,7 @@ final class ContactServiceUnitTest extends TestCase
         $this->expectException(Exception::class);
         $this->expectExceptionMessage('le nom  doit être renseigné');
         $contactService = new ContactService();
-        $contactService->createContact(null,"pascal");
+        $contactService->createContact(null, "pascal");
     }
     //test Rechercher un contact avec un numéro
     public function testSearchContactWithNumber() {
@@ -77,7 +77,7 @@ final class ContactServiceUnitTest extends TestCase
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("l'id doit être un entier non nul");
         $contactService = new ContactService();
-        $contactService->UpdateContact(-5,"pascal","loic");
+        $contactService->UpdateContact(-5, "pascal", "loic");
     }
 
     //test Supprimer le contact avec le texte comme identifiant ok

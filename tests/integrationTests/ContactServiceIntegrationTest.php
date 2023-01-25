@@ -47,7 +47,7 @@ final class ContactServiceIntegrationTest extends TestCase
         }
         else
         {
-            throw new Exception("l'utilisateur na pas ete cree");
+            throw new Exception("lutilisateur na pas ete cree");
         }
     }
 

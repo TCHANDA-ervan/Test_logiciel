@@ -9,7 +9,7 @@
  */
 
 use PHPUnit\Framework\TestCase;
-use src\ContactService; 
+use src\ContactService;
 
 /**
  * * @covers invalidInputException
@@ -33,7 +33,7 @@ final class ContactServiceUnitTest extends TestCase
     //     $contactService->createContact(null,null);
     // }
     //test Création Contact Sans Prenom
-    public function testCreationContactWithoutPrenom() 
+    public function testCreationContactWithoutPrenom()
     {
         
         $this->expectException(Exception::class);
@@ -59,14 +59,14 @@ final class ContactServiceUnitTest extends TestCase
     }
     //test Rechercher un contactSans Texte ok
     public function testSearchContactWithAnyText()
-    {   
+    {
         $this->expectException(Exception::class);
         $this->expectExceptionMessage('search doit être renseigné');
         $contactService = new ContactService();
         $contactService->searchContact("");
     }
     //ok
-    public function testModifyContactWithInvalidId() 
+    public function testModifyContactWithInvalidId()
     {
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("l'id doit être un entier non nul");

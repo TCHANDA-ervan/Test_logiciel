@@ -11,7 +11,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-require __DIR__.'/../../src/ContactService.php';
+require_once __DIR__.'/../../src/ContactService.php';
 
 /**
  * * @covers invalidInputException
@@ -23,7 +23,8 @@ final class ContactServiceIntegrationTest extends TestCase
 {
     private $contactService;
 
-    public function __construct(string $name = null, array $data = [], $dataName = '') {
+    public function __construct(string $name = null, array $data = [], $dataName = '') 
+    {
         parent::__construct($name, $data, $dataName);
         $this->contactService = new ContactService();
     }

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-require_once __DIR__.'/../src/contacts.php';
+use __DIR__.'/../src/contacts.php';
 
 $contacts = new contactService();
 $contacts->init('contactsTest.sqlite');

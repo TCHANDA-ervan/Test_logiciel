@@ -10,7 +10,6 @@
  */
 
 use PHPUnit\Framework\TestCase;
-
 use src\ContactService;
 
 /**

@@ -11,7 +11,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-use __DIR__.'/../../src/ContactService.php';
+use /../../src/ContactService.php';
 
 /**
  * * @covers invalidInputException

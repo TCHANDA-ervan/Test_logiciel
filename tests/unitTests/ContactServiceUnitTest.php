@@ -19,7 +19,6 @@ use src\ContactService;
 final class ContactServiceUnitTest extends TestCase
 {
     private $contactService;
-
     public function __construct(string $name = null, array $data = [], $dataName = '')
     {
         parent::__construct($name, $data, $dataName);

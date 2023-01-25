@@ -49,7 +49,8 @@ final class ContactServiceUnitTest extends TestCase
         $contactService->createContact(null, "pascal");
     }
     //test Rechercher un contact avec un numéro
-    public function testSearchContactWithNumber() {
+    public function testSearchContactWithNumber()
+    {
         $this->expectException(Exception::class);
         $this->expectExceptionMessage('search doit être une chaine de caractères');
         $contactService = new ContactService();

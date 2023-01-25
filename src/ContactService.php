@@ -75,7 +75,7 @@ class ContactService {
     }
 
     /**
-     * Récupère tous les contacts en BDD
+     * les contacts en BDD
      * @return array le retour de la requete SQL
      */
     public function getAllContacts() {

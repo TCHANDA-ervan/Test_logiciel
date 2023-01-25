@@ -19,10 +19,12 @@ require __DIR__ . '/../../src/ContactService.php';
  *
  * @internal
  */
-final class ContactServiceUnitTest extends TestCase {
+final class ContactServiceUnitTest extends TestCase 
+{
     private $contactService;
 
-    public function __construct(string $name = null, array $data = [], $dataName = '') {
+    public function __construct(string $name = null, array $data = [], $dataName = '')
+    {
         parent::__construct($name, $data, $dataName);
         $this->contactService = new ContactService();
     }
@@ -36,7 +38,8 @@ final class ContactServiceUnitTest extends TestCase {
     // }
 
     //test Création Contact Sans Prenom
-    public function testCreationContactWithoutPrenom() {
+    public function testCreationContactWithoutPrenom() 
+    {
         
         $this->expectException(Exception::class);
         $this->expectExceptionMessage('le prenom doit être renseigné');
@@ -45,7 +48,8 @@ final class ContactServiceUnitTest extends TestCase {
     }
     
     //test Création Contact Sans Prenom
-    public function testCreationContactWithoutNom() {
+    public function testCreationContactWithoutNom()
+    {
         $this->expectException(Exception::class);
         $this->expectExceptionMessage('le nom  doit être renseigné');
         $contactService = new ContactService();
@@ -68,7 +72,8 @@ final class ContactServiceUnitTest extends TestCase {
     }
 
     //ok
-    public function testModifyContactWithInvalidId() {
+    public function testModifyContactWithInvalidId() 
+    {
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("l'id doit être un entier non nul");
         $contactService = new ContactService();

@@ -11,7 +11,8 @@
 
 use PHPUnit\Framework\TestCase;
 
-use /../../src/ContactService.php';
+use function PHPUnit\Framework\once;
+use src\ContactService;
 
 /**
  * * @covers invalidInputException
@@ -27,6 +28,7 @@ final class ContactServiceIntegrationTest extends TestCase
     {
         parent::__construct($name, $data, $dataName);
         $this->contactService = new ContactService();
+        
     }
 
     // test de suppression de toute les données, nécessaire pour nettoyer la bdd de tests à la fin
@@ -34,40 +36,51 @@ final class ContactServiceIntegrationTest extends TestCase
     {
         $contactService = new ContactService();
         $contactService->deleteAllContact();
+        $this->assertEquals(0, $contactService->countContacts());
     }
 
 
     public function testCreationContact()
     {
         $contactService = new ContactService();
-        $contactService->createContact("pascal","victor");
+        $contactService->createContact("pascal", "victor");
         //du principe que id_pascal=2
-        if($contactService->searchContact(2))
-        {
-            throw new Exception("l'utilisateur a bien ete cree");
-        }
-        else
-        {
-            throw new Exception("lutilisateur na pas ete cree");
+        if ($contactService->searchContact(2)) {
+             $contact = $contactService->searchContact(2);
+             $this->assertEquals("pascal", $contact->getFirstName());
+             $this->assertEquals("victor", $contact->getLastName());
+      
+        } else {
+            throw new InvalidArgumentException("l'utilisateur na pas ete cree");
         }
     }
+
+           
+
 
     public function testSearchContact()
     {
         $contactService = new ContactService();
-        $contactService->searchContact(2);
+        $result=$contactService->searchContact(2);
+        $this->assertSame('Contact', get_class($result), "ne rien retourner");
+
     }
+
 
     public function testModifyContact()
     {
         $contactService = new ContactService();
-        $contactService->createContact(2,"pascal","victor");
+        $contactService->createContact(2, "pascal", "victor");
+        $this->assertTrue($contactService->modifyContact(2, "pascal", "victor") instanceof ContactService);
     }
 
     public function testDeleteContact()
     {
         $contactService = new ContactService();
-        $contactService->deleteContact(2);
-    }
+        $del=$contactService->deleteContact(2);
+        $this->assertSame('boolean', gettype($del), "ne rien retourner");
+        
 
+    }
+    
 }

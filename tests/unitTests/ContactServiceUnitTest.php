@@ -76,7 +76,8 @@ final class ContactServiceUnitTest extends TestCase {
     }
 
     //test Supprimer le contact avec le texte comme identifiant ok
-    public function testDeleteContactWithTextAsId() {
+    public function testDeleteContactWithTextAsId()
+    {
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("l'id doit être un entier non nul");
         $contactService = new ContactService();

@@ -10,7 +10,8 @@
  */
 
 use PHPUnit\Framework\TestCase;
-use src\ContactService;
+
+use /../../src/ContactService.php';
 
 /**
  * * @covers invalidInputException

@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Symfony package.
  *
@@ -10,16 +9,14 @@
  */
 
 use PHPUnit\Framework\TestCase;
-
 use src\ContactService;
-
 /**
  * * @covers invalidInputException
  * @covers \ContactService
  *
  * @internal
  */
-final class ContactServiceUnitTest extends TestCase 
+final class ContactServiceUnitTest extends TestCase
 {
     private $contactService;
 
@@ -28,7 +25,6 @@ final class ContactServiceUnitTest extends TestCase
         parent::__construct($name, $data, $dataName);
         $this->contactService = new ContactService();
     }
-
     // //test Création Contact Sans Texte ok
     // public function testCreationContactWithoutAnyText() {
     //     $this->expectException(Exception::class);
@@ -36,7 +32,6 @@ final class ContactServiceUnitTest extends TestCase
     //     $contactService = new ContactService();
     //     $contactService->createContact(null,null);
     // }
-
     //test Création Contact Sans Prenom
     public function testCreationContactWithoutPrenom() 
     {
@@ -46,7 +41,6 @@ final class ContactServiceUnitTest extends TestCase
         $contactService = new ContactService();
         $contactService->createContact("wenji", null);
     }
-    
     //test Création Contact Sans Prenom
     public function testCreationContactWithoutNom()
     {
@@ -70,7 +64,6 @@ final class ContactServiceUnitTest extends TestCase
         $contactService = new ContactService();
         $contactService->searchContact("");
     }
-
     //ok
     public function testModifyContactWithInvalidId() 
     {
@@ -79,7 +72,6 @@ final class ContactServiceUnitTest extends TestCase
         $contactService = new ContactService();
         $contactService->UpdateContact(-5, "pascal", "loic");
     }
-
     //test Supprimer le contact avec le texte comme identifiant ok
     public function testDeleteContactWithTextAsId()
     {
